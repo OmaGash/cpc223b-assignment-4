@@ -7,9 +7,11 @@ if(session_id()==""){
     $dbPass ="";
     $dbName = "cpc223b";
 
-    $sql = mysqli_connect($server_name, $dbUsername, $dbPass, $dbName);
+    $connection = mysqli_connect($server_name, $dbUsername, $dbPass, $dbName);
 
-    if(!$sql){
-        die("Error: ".mysqli_connect_error());
+    if(isset($sql)){
+        if(!$sql){
+            die("Error: ".mysqli_connect_error());
+        }
     }
 ?>
