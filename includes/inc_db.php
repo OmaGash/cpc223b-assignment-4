@@ -9,9 +9,8 @@ if(session_id()==""){
 
     $connection = mysqli_connect($server_name, $dbUsername, $dbPass, $dbName);
 
-    if(isset($sql)){
-        if(!$sql){
-            die("Error: ".mysqli_connect_error());
-        }
+    if(!$connection){
+        die("Error: ".mysqli_connect_error());
+        
     }
 ?>

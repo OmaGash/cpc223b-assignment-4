@@ -29,6 +29,13 @@ else{
 
 <!DOCTYPE html>
 <html>
+<head>
+<title>Registration</title>
+</head>
+<?php
+        if(isset($_GET['error'])){
+            echo '<b color="#FF0000">Error: '.$_GET['error'].'</b>';
+        }?>
         <main>
             <h1>Register</h1>
             <form action="#" method="POST">
