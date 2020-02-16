@@ -2,6 +2,13 @@
     if(session_id() == ""){
         session_start();
     }
+
+    if(isset($_POST['login'])){
+        $_SESSION['username'] = $_POST['userid'];
+        $_SESSION['password'] = $_POST['pword'];
+        $_SESSION['logging_in'] = true;
+        header("Location: includes/inc_login.php");
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,8 +33,8 @@
                         }
                         else{
                             echo '<div>
-                                <form action="includes/inc_login.php" method="post">
-                                    <input type="text" name="userid" placeholder="Username/Email" required>
+                                <form action="#" method="post">
+                                    <input type="text" name="userid" placeholder="Username/Email" required autofocus>
                                     <input type="password" name="pword" placeholder="Password" required>
                                     <input type="submit" name="login" value="Log In">
                                 </form>
@@ -37,7 +44,7 @@
                     }
                     else {
                         echo '<div>
-                                <form action="includes/inc_login.php" method="post">
+                                <form action="#" method="post">
                                     <input type="text" name="userid" placeholder="Username/Email" required>
                                     <input type="password" name="pword" placeholder="Password" required>
                                     <input type="submit" name="login" value="Log In">
